@@ -27,25 +27,18 @@ cd yt-dlp
 Install the required Python packages using pip:
 ```bash
 sudo apt update
-sudo apt install python3 python3-pip -y
+sudo apt install python3 python3-pip python3.11-venv -y 
+python3 -m venv env
 source env/bin/activate
+pip install flask yt_dlp
 ```
 
 ### 3. Install FFmpeg
-FFmpeg is required for `yt_dlp` to merge video/audio and convert formats. Install it based on your operating system:
+FFmpeg is required for `yt_dlp` to merge video/audio and convert formats. 
 
-- **Ubuntu/Debian**:
-  ```bash
-  sudo apt install ffmpeg
-  ```
-
-- **macOS** (using Homebrew):
-  ```bash
-  brew install ffmpeg
-  ```
-
-- **Windows**:
-  Download FFmpeg from the [official website](https://ffmpeg.org/download.html) and add it to your system PATH.
+```bash
+sudo apt install ffmpeg
+```
 
 ### 4. Set Up Google Cloud Credentials
 If you need to download age-restricted or private YouTube content, you may need Google Cloud credentials for authentication.
