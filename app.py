@@ -22,12 +22,33 @@ def index():
     if request.method == "POST":
         youtube_url = request.form.get("youtube_url")
         if "mp4" in request.form:
-            out_file = mp4.download(youtube_url, CACHE_DIR)
+            out_files, playlist_title = mp4.download(youtube_url, CACHE_DIR)
         elif "mp3" in request.form:
-            out_file = mp3.download(youtube_url, CACHE_DIR)
+            out_files, playlist_title = mp3.download(youtube_url, CACHE_DIR)
         else:
             return redirect(url_for("index"))
-        return send_file(out_file, as_attachment=True)
+
+        # If multiple files -> zip them
+        if len(out_files) > 1:
+            import zipfile, io
+            # Use playlist title if available
+            zip_name = playlist_title or "playlist"
+            safe_name = "".join(c if c.isalnum() or c in " -_()" else "_" for c in zip_name)
+
+            zip_buf = io.BytesIO()
+            with zipfile.ZipFile(zip_buf, "w") as zipf:
+                for f in out_files:
+                    zipf.write(f, os.path.basename(f))
+            zip_buf.seek(0)
+            return send_file(
+                zip_buf,
+                as_attachment=True,
+                download_name=f"{safe_name}.zip",
+                mimetype="application/zip"
+            )
+        else:
+            return send_file(out_files[0], as_attachment=True)
+
     return render_template("index.html")
 
 if __name__ == "__main__":
