@@ -9,13 +9,6 @@ A simple Flask-based web application to download YouTube videos as MP4 or MP3 fi
 * Automatically deletes downloaded files after 10 minutes to manage disk space.
 * Simple web interface for entering YouTube URLs and selecting download format.
 
-## Prerequisites
-
-* Python 3.6 or higher
-* pip (Python package manager)
-* Google Cloud credentials for authentication (required for age-restricted or private content)
-* FFmpeg installed on your system (required by `yt_dlp` for media processing)
-
 ## Install
 
 1. Download the [latest release](https://github.com/UndercoverComputing/yt-dlp/releases) for windows and extract the folder.
