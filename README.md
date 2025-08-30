@@ -34,7 +34,7 @@ Refer to [python/README.md](https://github.com/UndercoverComputing/yt-dlp/blob/m
 
 ### Windows
 
-Refer to [python/README.md](https://github.com/UndercoverComputing/yt-dlp/blob/main/windows/README.md)
+Refer to [windows/README.md](https://github.com/UndercoverComputing/yt-dlp/blob/main/windows/README.md)
 
 ## Contributing
 
