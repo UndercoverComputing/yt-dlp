@@ -3,7 +3,7 @@ import time
 import traceback
 
 # Path to your Google credentials file
-GOOGLE_CREDENTIALS = "google-credentials.json"
+GOOGLE_CREDENTIALS = "google_oauth.json"
 
 def freeze_on_error(msg, exc=None):
     """Prints error and freezes until user presses Enter."""
