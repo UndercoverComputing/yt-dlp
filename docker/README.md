@@ -12,7 +12,6 @@ A simple Flask-based web application to download YouTube videos as MP4 or MP3 fi
 ## Prerequisites
 
 * [Docker](https://www.docker.com/get-started) installed on your system
-* [Docker Compose](https://docs.docker.com/compose/install/) installed
 * Git installed to clone the repository
 
 ### Project Structure
