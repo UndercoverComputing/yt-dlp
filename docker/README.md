@@ -33,7 +33,7 @@ yt-dlp/docker
    Clone this repository to your local machine:
    ```bash
    git clone https://github.com/UndercoverComputing/yt-dlp
-   cd yt-dlp
+   cd yt-dlp/docker
    ```
 
 2. Set Up Google Cloud Credentials
