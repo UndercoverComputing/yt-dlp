@@ -54,8 +54,8 @@ yt-dlp/docker
    Build and start the Docker containers in detached mode:
 
    ```bash
-   docker build -t yt-dlp:1.3 .
-   docker run -d --name yt-dlp -p 8000:8000 -v /opt/yt-dlp/downloads:/downloads  yt-dlp:1.3
+   docker build -t yt-dlp .
+   docker run -d --name yt-dlp -p 8000:8000 -v /opt/yt-dlp/downloads:/downloads yt-dlp
    ```
 
 
