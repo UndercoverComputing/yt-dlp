@@ -55,7 +55,12 @@ yt-dlp/docker
 
    ```bash
    docker build -t yt-dlp .
-   docker run -d --name yt-dlp -p 8000:8000 -v /opt/yt-dlp/downloads:/downloads yt-dlp
+   docker run -d \
+     --name yt-dlp \
+     -p 8000:8000 \
+     -v /opt/yt-dlp/downloads:/downloads \
+     -v /opt/yt-dlp/google_oauth.json:/app/google_oauth.json:ro \
+     yt-dlp
    ```
 
 
