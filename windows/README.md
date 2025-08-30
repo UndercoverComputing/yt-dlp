@@ -16,7 +16,7 @@ A simple Flask-based web application to download YouTube videos as MP4 or MP3 fi
 3. Run yt-dlp.exe
 4. Downloads will go to the folder `downloads` which is created in the same directory as the .exe
 
-(At this stage you will have to use the terminal output to see when the download is complete)
+**(At this stage you will have to use the terminal output to see when the download is complete)**
 
 ## Build
 
