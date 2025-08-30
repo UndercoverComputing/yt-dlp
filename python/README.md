@@ -98,6 +98,10 @@ yt-dlp/python
 
 ## Troubleshooting
 
-* **FFmpeg not found**: Ensure FFmpeg is installed and added to your system PATH.
-* **Download fails**: Verify the YouTube URL is valid and that `google_oauth.json` is correctly configured for restricted content.
-* **Port conflicts**: If port 8000 is in use, modify the `port` parameter in `app.py` (e.g., `app.run(host="0.0.0.0", port=8080, debug=True)`).
+* FFmpeg not found: Ensure FFmpeg is installed and added to your system PATH.
+* Download fails: Verify the YouTube URL is valid and that `google_oauth.json` is correctly configured for restricted content.
+* Port conflicts: If port 8000 is in use, modify the `port` parameter in `app.py` (e.g., `app.run(host="0.0.0.0", port=8080, debug=True)`).
+
+## Contributing
+
+Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request with your changes.
