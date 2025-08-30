@@ -16,67 +16,37 @@ A simple Flask-based web application to download YouTube videos as MP4 or MP3 fi
 * Google Cloud credentials for authentication (required for age-restricted or private content)
 * FFmpeg installed on your system (required by `yt_dlp` for media processing)
 
-## Installation
+## Install
 
-### 1. Clone the Repository
+1. Download the [latest release](https://github.com/UndercoverComputing/yt-dlp/releases) for windows and extract the folder.
+2. Place your Google Cloud Credentials json in the same folder, and name it `google_oauth.json`.
+3. Run yt-dlp.exe
+4. Downloads will go to the folder `downloads` which is created in the same directory as the .exe
 
-Clone this repository to your local machine:
+## Build
 
-```bash
-git clone https://github.com/UndercoverComputing/yt-dlp
-cd yt-dlp/python
-```
-
-### 2. Install Python & Dependencies
-
-Install the required Python packages using pip:
-
-```bash
-sudo apt update
-sudo apt install python3 python3-pip python3.11-venv -y 
-python3 -m venv env
-source env/bin/activate
-pip install flask yt_dlp
-```
-
-### 3. Install FFmpeg
-
-FFmpeg is required for `yt_dlp` to merge video/audio and convert formats.
-
-```bash
-sudo apt install ffmpeg
-```
-
-### 4. Project Structure
-
-Ensure your project directory contains the following files:
-
-```
-yt-dlp/python
-├── app.py               # Main Flask application
-├── mp4.py               # MP4 download logic
-├── mp3.py               # MP3 download logic
-├── templates/
-│   └── index.html       # Web interface
-├── downloads/           # Directory for downloaded files (auto-created)
-└── google_oauth.json    # Google Cloud credentials
-```
-
-## Usage
-
-1. Run the Flask application:
+1. Clone the Repository
+   Clone this repository to your local machine:
 
    ```bash
-   python3 app.py
+   git clone https://github.com/UndercoverComputing/yt-dlp
+   cd yt-dlp/windows
    ```
 
-   The server will start on `http://0.0.0.0:8000` in debug mode.
+2. Install prerequisites
 
-2. Open your browser and navigate to `http://localhost:8000`.
+   ```shell
+   pip install pywebview flask pyinstaller yt-dlp
+   ```
 
-3. Enter a YouTube video URL and select either "Download MP4" or "Download MP3".
+3. Build the application
 
-4. The file will download automatically, and files older than 10 minutes will be deleted from the `downloads` directory.
+   ```shell
+   pyinstaller --onefile --add-data "templates;templates" main.py
+   ```
+
+2. Place your Google Cloud Credentials json in the same folder, and name it `google_oauth.json`.
+3. Run yt-dlp.exe
 
 ## Notes
 
@@ -88,7 +58,6 @@ yt-dlp/python
 
 * FFmpeg not found: Ensure FFmpeg is installed and added to your system PATH.
 * Download fails: Verify the YouTube URL is valid and that `google_oauth.json` is correctly configured for restricted content.
-* Port conflicts: If port 8000 is in use, modify the `port` parameter in `app.py` (e.g., `app.run(host="0.0.0.0", port=8080, debug=True)`).
 
 ## Contributing
 

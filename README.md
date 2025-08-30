@@ -12,6 +12,18 @@ A simple Flask-based web application to download YouTube videos as MP4 or MP3 fi
 
 ## Installation
 
+### Set Up Google Cloud Credentials
+
+Google Cloud credentials are required to download age-restricted or private YouTube content.
+
+1. Go to [Google Cloud Console → APIs & Services → Credentials](https://console.cloud.google.com/apis/credentials).
+2. Create an OAuth client ID:
+
+   * **Application type**: Desktop app
+   * **Name**: Choose a name (e.g., `yt-dlp-server`)
+3. Download the JSON credentials file.
+4. Save the JSON file as `google_oauth.json` in the root directory of the project and ensure the path matches what is used in `mp4.py` and `mp3.py`.
+
 ### Docker:
 
 Refer to [docker/README.md](https://github.com/UndercoverComputing/yt-dlp/blob/main/docker/README.md)
@@ -19,6 +31,10 @@ Refer to [docker/README.md](https://github.com/UndercoverComputing/yt-dlp/blob/m
 ### Python:
 
 Refer to [python/README.md](https://github.com/UndercoverComputing/yt-dlp/blob/main/python/README.md)
+
+### Windows
+
+Refer to [python/README.md](https://github.com/UndercoverComputing/yt-dlp/blob/main/windows/README.md)
 
 ## Contributing
 

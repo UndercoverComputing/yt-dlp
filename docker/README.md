@@ -39,20 +39,7 @@ yt-dlp/docker
    cd yt-dlp/docker
    ```
 
-2. Set Up Google Cloud Credentials
-   To download age-restricted or private YouTube content, you need Google Cloud credentials for authentication.
-
-   1. Go to [Google Cloud Console → APIs & Services → Credentials](https://console.cloud.google.com/apis/credentials).
-   2. Create an OAuth client ID:
-
-      * **Application type**: Desktop app
-      * **Name**: Choose a name (e.g., `yt-dlp-server`)
-   3. Download the JSON credentials file.
-   4. Save the JSON file as `google_oauth.json` in the root directory of the project. Alternatively, modify the `OAUTH_JSON_FILE` path in `mp4.py` and `mp3.py` to point to your credentials file.
-
-   **Note**: The `google_oauth.json` file is referenced in the `yt_dlp` configuration in `mp4.py` and `mp3.py`. Ensure it is correctly placed or update the file path in the code if needed.
-
-3. **Run the Application**
+2. **Run the Application**
 
    Build and start the Docker containers in detached mode:
 
