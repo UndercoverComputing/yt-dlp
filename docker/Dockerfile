@@ -9,13 +9,15 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Copy application code
-COPY app.py mp3.py mp4.py requirements.txt templates/ ./
+COPY app.py mp3.py mp4.py requirements.txt ./
+COPY templates/ templates/
+COPY google_oauth.json ./
+
+# make sure downloads dir exists (inside container)
+RUN mkdir -p /app/downloads
 
 # Install python deps
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Make sure downloads dir exists
-RUN mkdir -p /downloads
 
 # Set environment so yt-dlp knows where to drop files
 ENV CACHE_DIR=/downloads
