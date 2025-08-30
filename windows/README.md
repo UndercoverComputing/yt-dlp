@@ -13,8 +13,9 @@ A simple Flask-based web application to download YouTube videos as MP4 or MP3 fi
 
 1. Download the [latest release](https://github.com/UndercoverComputing/yt-dlp/releases) for windows and extract the folder.
 2. Place your Google Cloud Credentials json in the same folder, and name it `google_oauth.json`.
-3. Run yt-dlp.exe
-4. Downloads will go to the folder `downloads` which is created in the same directory as the .exe
+3. Install ffmpeg: https://www.wikihow.com/Install-FFmpeg-on-Windows
+4. Run yt-dlp.exe
+5. Downloads will go to the folder `downloads` which is created in the same directory as the .exe
 
 **(At this stage you will have to use the terminal output to see when the download is complete)**
 
