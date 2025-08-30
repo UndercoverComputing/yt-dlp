@@ -24,7 +24,6 @@ yt-dlp/docker
 ├── mp3.py               # MP3 download logic
 ├── templates/
 │   └── index.html       # Web interface
-├── downloads/           # Directory for downloaded files (auto-created)
 └── google_oauth.json    # Google Cloud credentials (optional)
 ```
 
