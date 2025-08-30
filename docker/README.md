@@ -3,10 +3,11 @@
 A simple Flask-based web application to download YouTube videos as MP4 or MP3 files. The application uses `yt_dlp` for downloading and processing media and includes a cleanup mechanism to remove downloaded files older than 10 minutes.
 
 ## Features
-- Download YouTube videos as MP4 (video + audio).
-- Download YouTube audio as MP3.
-- Automatically deletes downloaded files after 10 minutes to manage disk space.
-- Simple web interface for entering YouTube URLs and selecting download format.
+
+* Download YouTube videos as MP4 (video + audio).
+* Download YouTube audio as MP3.
+* Automatically deletes downloaded files after 10 minutes to manage disk space.
+* Simple web interface for entering YouTube URLs and selecting download format.
 
 ## Prerequisites
 
@@ -15,7 +16,9 @@ A simple Flask-based web application to download YouTube videos as MP4 or MP3 fi
 * Git installed to clone the repository
 
 ### Project Structure
+
 Ensure your project directory contains the following files:
+
 ```
 yt-dlp/docker
 ├── Dockerfile           # Docker image definition
@@ -24,28 +27,30 @@ yt-dlp/docker
 ├── mp3.py               # MP3 download logic
 ├── templates/
 │   └── index.html       # Web interface
-└── google_oauth.json    # Google Cloud credentials (optional)
+└── google_oauth.json    # Google Cloud credentials
 ```
 
 ## Installation
 
 1. Clone the Repository
    Clone this repository to your local machine:
+
    ```bash
    git clone https://github.com/UndercoverComputing/yt-dlp
    cd yt-dlp/docker
    ```
 
 2. Set Up Google Cloud Credentials
-   If you need to download age-restricted or private YouTube content, you may need Google Cloud credentials for authentication.
-   
+   To download age-restricted or private YouTube content, you need Google Cloud credentials for authentication.
+
    1. Go to [Google Cloud Console → APIs & Services → Credentials](https://console.cloud.google.com/apis/credentials).
    2. Create an OAuth client ID:
-      - **Application type**: Desktop app
-      - **Name**: Choose a name (e.g., `yt-dlp-server`)
+
+      * **Application type**: Desktop app
+      * **Name**: Choose a name (e.g., `yt-dlp-server`)
    3. Download the JSON credentials file.
    4. Save the JSON file as `google_oauth.json` in the root directory of the project. Alternatively, modify the `OAUTH_JSON_FILE` path in `mp4.py` and `mp3.py` to point to your credentials file.
-   
+
    **Note**: The `google_oauth.json` file is referenced in the `yt_dlp` configuration in `mp4.py` and `mp3.py`. Ensure it is correctly placed or update the file path in the code if needed.
 
 3. **Run the Application**
@@ -62,7 +67,6 @@ yt-dlp/docker
      yt-dlp
    ```
 
-
 ## Usage
 
 1. Open your browser and navigate to `http://localhost:8000`.
@@ -72,11 +76,13 @@ yt-dlp/docker
 3. The file will download automatically, and files older than 10 minutes will be deleted from the `downloads` directory. Please do not close the browser tab while it loads the download.
 
 ## Notes
-- The application uses `yt_dlp` to handle YouTube downloads, which supports a wide range of formats and options. You can modify the `ydl_opts` in `mp4.py` or `mp3.py` to customize download settings (e.g., video quality, audio bitrate).
-- The cleanup mechanism runs on every page load, removing files in the `downloads` directory older than 10 minutes.
-- Ensure `google_oauth.json` is present if downloading content that requires authentication (e.g., age-restricted videos).
+
+* The application uses `yt_dlp` to handle YouTube downloads, which supports a wide range of formats and options. You can modify the `ydl_opts` in `mp4.py` or `mp3.py` to customize download settings (e.g., video quality, audio bitrate).
+* The cleanup mechanism runs on every page load, removing files in the `downloads` directory older than 10 minutes.
+* Ensure `google_oauth.json` is present if downloading content that requires authentication (e.g., age-restricted videos).
 
 ## Troubleshooting
+
 * Download fails: Verify the YouTube URL is valid and that `google_oauth.json` is correctly configured for restricted content.
 * Check Docker logs for errors: `docker compose logs yt-dlp`.
 * Ensure Docker and Docker Compose are up to date.
