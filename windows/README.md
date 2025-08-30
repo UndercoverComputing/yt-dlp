@@ -8,6 +8,8 @@ A simple Flask-based web application to download YouTube videos as MP4 or MP3 fi
 * Download YouTube audio as MP3.
 * Automatically deletes downloaded files after 10 minutes to manage disk space.
 * Simple web interface for entering YouTube URLs and selecting download format.
+* **Very buggy**
+* **Doesn't work half the time**
 
 ## Install
 
