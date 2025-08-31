@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Downloader</title>
     <style>
         body {
@@ -11,6 +12,8 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
+            padding: 10px;
         }
         .container {
             background: white;
@@ -18,13 +21,17 @@
             border-radius: 15px;
             box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
             text-align: center;
+            width: 100%;
+            max-width: 420px; /* desktop limit */
         }
         input[type="text"] {
-            width: 300px;
+            width: 300px; /* desktop size */
+            max-width: 100%; /* scales down on small screens */
             padding: 10px;
             margin-bottom: 20px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            box-sizing: border-box;
         }
         button {
             padding: 10px 20px;
@@ -38,6 +45,17 @@
         }
         button:hover {
             background: #0056b3;
+        }
+
+        /* Small screens adjustments */
+        @media (max-width: 400px) {
+            input[type="text"] {
+                width: 100%; /* full width on small screens */
+            }
+            button {
+                width: 100%; /* stack buttons vertically */
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
